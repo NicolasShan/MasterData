@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.io.Serializable;
 
 @Repository       //deal with hibernate Repositories
-public interface CustomermasterRepository extends JpaRepository<Customermaster, Long>, JpaSpecificationExecutor<Customermaster>, Serializable {
+public interface CustomermasterRepository extends JpaRepository<Customermaster, String>, JpaSpecificationExecutor<Customermaster>, Serializable {
 
 }

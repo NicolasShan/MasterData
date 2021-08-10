@@ -6,15 +6,15 @@ import com.woolworths.cspmasterdata.model.Customermaster;
 import java.util.List;
 
 public interface CustomerService {
-	
-	public List<Customermaster> getAll();
 
-	public Customermaster add(Customermaster customer);
+    List<Customermaster> getAll();
 
-	public Customermaster update(Customermaster customer);
+    Customermaster add(Customermaster customer);
 
-	public void delete(long id);
+    Customermaster update(Customermaster customer);
 
-	public Customermaster getCustomerById(long id);
+    void delete(String id);
+
+    Customermaster getCustomerById(String id);
 
 }

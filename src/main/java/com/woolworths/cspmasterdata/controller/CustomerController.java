@@ -23,8 +23,7 @@ public class CustomerController {
 
 	@GetMapping(value = "/customers/{id}")
 	public ResponseEntity<Object> getCustomerById(@PathVariable("id") String id) {
-		Long _id = Long.valueOf(id);
-		Customermaster customer = this.customerService.getCustomerById(_id);
+		Customermaster customer = this.customerService.getCustomerById(id.trim());
 		return ResponseEntity.ok(customer);
 	}
 
@@ -42,8 +41,7 @@ public class CustomerController {
 
 	@DeleteMapping(value = "/customers/{id}")
 	public ResponseEntity<Object> deleteCustomerById(@PathVariable("id") String id) {
-		Long _id = Long.valueOf(id);
-		this.customerService.delete(_id);
+		this.customerService.delete(id.trim());
 		return ResponseEntity.ok().build();
 	}
 }
