@@ -6,7 +6,9 @@ spring:
     driverClassName: org.postgresql.Driver
     time-zone: GMT+10
 
+
   jpa:
+    open-in-view: false
     database: POSTGRESQL
     show-sql: true
     generate-ddl: true
