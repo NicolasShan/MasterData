@@ -9,12 +9,16 @@ public interface CustomerService {
 
     List<Customermaster> getAll();
 
+    Customermaster getCustomerById(String id);
+
+    Customermaster get(Customermaster customer);
+
     Customermaster add(Customermaster customer);
 
     Customermaster update(Customermaster customer);
 
-    void delete(String id);
+    void deleteById(String id);
 
-    Customermaster getCustomerById(String id);
+    void delete(Customermaster customer);
 
 }

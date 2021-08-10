@@ -37,13 +37,23 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void delete(String id) {
+	public void deleteById(String id) {
 		this.customerRepository.deleteById(id);
+	}
+
+	@Override
+	public void delete(Customermaster customer) {
+		this.customerRepository.deleteById(customer.getCustomerno());
 	}
 
 	@Override
 	public Customermaster getCustomerById(String id) {
 		return this.customerRepository.findById(id).orElse(null);
+	}
+
+	@Override
+	public Customermaster get(Customermaster customer) {
+		return this.customerRepository.findById(customer.getCustomerno()).orElse(null);
 	}
 
 }
