@@ -29,7 +29,7 @@ public class CustomerController {
 
 	@GetMapping(value = "/customers")
 	public ResponseEntity<Object> getCustomer(@RequestBody Customermaster customer) {
-		Customermaster getcustomer = this.customerService.getCustomerById(customer.getCustomerno());
+		Customermaster getcustomer = this.customerService.get(customer);
 		return ResponseEntity.ok(getcustomer);
 	}
 
@@ -47,7 +47,7 @@ public class CustomerController {
 
 	@DeleteMapping(value = "/customers")
 	public ResponseEntity<Object> deleteCustomer(@RequestBody Customermaster customer) {
-		this.customerService.deleteById(customer.getCustomerno());
+		this.customerService.delete(customer);
 		return ResponseEntity.ok().build();
 	}
 
