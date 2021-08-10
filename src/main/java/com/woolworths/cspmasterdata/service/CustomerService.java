@@ -20,5 +20,4 @@ public interface CustomerService {
     void deleteById(String id);
 
     void delete(Customermaster customer);
-
 }

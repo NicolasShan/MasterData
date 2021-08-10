@@ -27,6 +27,12 @@ public class CustomerController {
 		return ResponseEntity.ok(customer);
 	}
 
+	@GetMapping(value = "/customers")
+	public ResponseEntity<Object> getCustomer(@RequestBody Customermaster customer) {
+		Customermaster getcustomer = this.customerService.getCustomerById(customer.getCustomerno());
+		return ResponseEntity.ok(getcustomer);
+	}
+
 	@PostMapping(value = "/customers")
 	public ResponseEntity<Object> addCustomer(@RequestBody Customermaster customer) {
 		Customermaster created = this.customerService.add(customer);
@@ -37,6 +43,12 @@ public class CustomerController {
 	public ResponseEntity<Object> updateCustomer(@RequestBody Customermaster customer) {
 		Customermaster updated = this.customerService.update(customer);
 		return ResponseEntity.ok(updated);
+	}
+
+	@DeleteMapping(value = "/customers")
+	public ResponseEntity<Object> deleteCustomer(@RequestBody Customermaster customer) {
+		this.customerService.deleteById(customer.getCustomerno());
+		return ResponseEntity.ok().build();
 	}
 
 	@DeleteMapping(value = "/customers/{id}")
