@@ -1,9 +1,7 @@
 package com.woolworths.cspmasterdata.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -13,8 +11,6 @@ import java.util.Objects;
 @DynamicUpdate
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@Data
 @Entity
 @IdClass(UsernotificationxrefPK.class)
 public class Usernotificationxref {
@@ -42,4 +38,89 @@ public class Usernotificationxref {
     @JoinColumns({@JoinColumn(name = "notificationtype", referencedColumnName = "notificationtype", insertable = false, updatable = false),
             @JoinColumn(name = "notificationcat", referencedColumnName = "notificationcat", insertable = false, updatable = false)})
     private Notificationtype notificationtypes;
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public String getNotificationtype() {
+        return notificationtype;
+    }
+
+    public void setNotificationtype(String notificationtype) {
+        this.notificationtype = notificationtype;
+    }
+
+    public String getNotificationcat() {
+        return notificationcat;
+    }
+
+    public void setNotificationcat(String notificationcat) {
+        this.notificationcat = notificationcat;
+    }
+
+    public Date getCreatedatetime() {
+        return createdatetime;
+    }
+
+    public void setCreatedatetime(Date createdatetime) {
+        this.createdatetime = createdatetime;
+    }
+
+    public String getCreateuserid() {
+        return createuserid;
+    }
+
+    public void setCreateuserid(String createuserid) {
+        this.createuserid = createuserid;
+    }
+
+    public Date getUpdatedatetime() {
+        return updatedatetime;
+    }
+
+    public void setUpdatedatetime(Date updatedatetime) {
+        this.updatedatetime = updatedatetime;
+    }
+
+    public String getUpdateuserid() {
+        return updateuserid;
+    }
+
+    public void setUpdateuserid(String updateuserid) {
+        this.updateuserid = updateuserid;
+    }
+
+    public Userdetails getUserdetails() {
+        return userdetails;
+    }
+
+    public void setUserdetails(Userdetails userdetails) {
+        this.userdetails = userdetails;
+    }
+
+    public Notificationtype getNotificationtypes() {
+        return notificationtypes;
+    }
+
+    public void setNotificationtypes(Notificationtype notificationtypes) {
+        this.notificationtypes = notificationtypes;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Usernotificationxref)) return false;
+        Usernotificationxref that = (Usernotificationxref) o;
+        return Objects.equals(getUserid(), that.getUserid()) && Objects.equals(getNotificationtype(), that.getNotificationtype()) && Objects.equals(getNotificationcat(), that.getNotificationcat()) && Objects.equals(getCreatedatetime(), that.getCreatedatetime()) && Objects.equals(getCreateuserid(), that.getCreateuserid()) && Objects.equals(getUpdatedatetime(), that.getUpdatedatetime()) && Objects.equals(getUpdateuserid(), that.getUpdateuserid()) && Objects.equals(getUserdetails(), that.getUserdetails()) && Objects.equals(getNotificationtypes(), that.getNotificationtypes());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUserid(), getNotificationtype(), getNotificationcat(), getCreatedatetime(), getCreateuserid(), getUpdatedatetime(), getUpdateuserid(), getUserdetails(), getNotificationtypes());
+    }
 }

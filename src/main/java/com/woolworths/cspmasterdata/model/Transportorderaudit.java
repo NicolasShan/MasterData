@@ -1,9 +1,7 @@
 package com.woolworths.cspmasterdata.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Basic;
@@ -17,8 +15,6 @@ import java.util.Objects;
 @DynamicUpdate
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@Data
 @Entity
 public class Transportorderaudit {
     @Id

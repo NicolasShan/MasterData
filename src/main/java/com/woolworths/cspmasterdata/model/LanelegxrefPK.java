@@ -16,9 +16,7 @@ import java.util.Objects;
 @DynamicUpdate
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Embeddable
-@Data
 public class LanelegxrefPK implements Serializable {
     private BigInteger laneid;
     private String fromlocationid;

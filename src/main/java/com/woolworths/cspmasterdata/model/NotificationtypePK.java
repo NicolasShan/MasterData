@@ -15,8 +15,6 @@ import java.util.Objects;
 @DynamicUpdate
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@Data
 @Embeddable
 public class NotificationtypePK implements Serializable {
     private String notificationtype;

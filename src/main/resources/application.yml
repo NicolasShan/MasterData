@@ -1,14 +1,4 @@
 spring:
-  logging:
-    file: logs/application-debug.log
-    pattern:
-      console: "%d %-5level %logger : %msg%n"
-      file: "%d %-5level [%thread] %logger : %msg%n"
-    level:
-      root: WARN
-      org.springframework.web: DEBUG
-      org.hibernate: INFO
-
   datasource:
     url: jdbc:postgresql://localhost:5432/CspMasterData
     username: postgres
@@ -24,7 +14,7 @@ spring:
       ddl-auto: update
       show-sql: true
       format-sql: true
-      dialect:  org.hibernate.dialect.PostgreSQL13Dialect
+      dialect:  org.hibernate.dialect.PostgreSQL95Dialect
       new_generator_mappings: false
       current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
       cache:
