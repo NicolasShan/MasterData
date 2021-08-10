@@ -15,43 +15,43 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 
-	@GetMapping(value = "/customers")
+	@GetMapping(value = "/customer")
 	public ResponseEntity<Object> getAllCustomers() {
 		List<Customermaster> customers = this.customerService.getAll();
 		return ResponseEntity.ok(customers);
 	}
 
-	@GetMapping(value = "/customers/{id}")
+	@GetMapping(value = "/customer/{id}")
 	public ResponseEntity<Object> getCustomerById(@PathVariable("id") String id) {
 		Customermaster customer = this.customerService.getCustomerById(id.trim());
 		return ResponseEntity.ok(customer);
 	}
 
-	@GetMapping(value = "/customers")
+	@GetMapping(value = "/customer")
 	public ResponseEntity<Object> getCustomer(@RequestBody Customermaster customer) {
 		Customermaster getcustomer = this.customerService.get(customer);
 		return ResponseEntity.ok(getcustomer);
 	}
 
-	@PostMapping(value = "/customers")
+	@PostMapping(value = "/customer")
 	public ResponseEntity<Object> addCustomer(@RequestBody Customermaster customer) {
 		Customermaster created = this.customerService.add(customer);
 		return ResponseEntity.status(HttpStatus.CREATED).body(created);
 	}
 
-	@PutMapping(value = "/customers")
+	@PutMapping(value = "/customer")
 	public ResponseEntity<Object> updateCustomer(@RequestBody Customermaster customer) {
 		Customermaster updated = this.customerService.update(customer);
 		return ResponseEntity.ok(updated);
 	}
 
-	@DeleteMapping(value = "/customers")
+	@DeleteMapping(value = "/customer")
 	public ResponseEntity<Object> deleteCustomer(@RequestBody Customermaster customer) {
 		this.customerService.delete(customer);
 		return ResponseEntity.ok().build();
 	}
 
-	@DeleteMapping(value = "/customers/{id}")
+	@DeleteMapping(value = "/customer/{id}")
 	public ResponseEntity<Object> deleteCustomerById(@PathVariable("id") String id) {
 		this.customerService.deleteById(id.trim());
 		return ResponseEntity.ok().build();
