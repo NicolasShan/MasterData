@@ -16,7 +16,7 @@ public class SwaggerConfig {
     public Docket createRestApi() {
         return new Docket(DocumentationType.OAS_30)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.woolworths.csp.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.woolworths.cspmasterdata.controller"))
                 .build();
     }
 }
