@@ -15,7 +15,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 
-	@GetMapping(value = "/customer")
+	@GetMapping(value = "/customerlist")
 	public ResponseEntity<Object> getAllCustomers() {
 		List<Customermaster> customers = this.customerService.getAll();
 		return ResponseEntity.ok(customers);

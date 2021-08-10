@@ -16,7 +16,7 @@ public class TransportorderController {
     @Autowired
     private TransportorderService transportorderService;
 
-    @GetMapping(value = "/order")
+    @GetMapping(value = "/orderlist")
     public ResponseEntity<Object> getAllTransportorders() {
         List<Transportorder> orders = this.transportorderService.getAll();
         return ResponseEntity.ok(orders);
@@ -57,9 +57,4 @@ public class TransportorderController {
         this.transportorderService.deleteById(id.trim());
         return ResponseEntity.ok().build();
     }
-
-
-
-
-
 }
