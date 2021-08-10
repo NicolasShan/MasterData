@@ -41,10 +41,10 @@ public class Transportorder {
     private Customermaster customermaster;
 
     @OneToMany(targetEntity = Transportorderlegs.class, mappedBy = "transportorder", cascade=CascadeType.ALL)
-    private Set<Transportorderlegs> orderlegs = new HashSet<Transportorderlegs>();
+    private Set<Transportorderlegs> orderlegs = new HashSet<>();
 
     @OneToMany(targetEntity = Transportorderdetails.class, mappedBy = "transportorder", cascade=CascadeType.ALL)
-    private Set<Transportorderdetails> orderdetails = new HashSet<Transportorderdetails>();
+    private Set<Transportorderdetails> orderdetails = new HashSet<>();
 
     public String getTransportorderid() {
         return transportorderid;
@@ -197,7 +197,7 @@ public class Transportorder {
 
     @Override
     public String toString() {
-        return "Transportorder{" +
+        return "TransportorderRepository{" +
                 "transportorderid='" + transportorderid + '\'' +
                 ", orderref='" + orderref + '\'' +
                 ", orderstatus='" + orderstatus + '\'' +
